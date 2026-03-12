@@ -1,9 +1,24 @@
-FROM python:latest
+# Imagen base
+FROM python:3.10
 
-RUN apt-get update -y && \
-    apt-get install python3-opencv -y 
+# Evita archivos pyc y buffers
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
-WORKDIR /home/src
+# Instalar dependencias del sistema
+RUN apt-get update && \
+    apt-get install -y python3-opencv && \
+    apt-get clean
 
-COPY . ./
+# Directorio de trabajo
+WORKDIR /app
+
+# Copiar proyecto
+COPY . .
+
+# Instalar dependencias de Python
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+
+# Ejecutar aplicación
+CMD ["python", "app.py"]
