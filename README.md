@@ -20,36 +20,31 @@ Para mejorar la interpretabilidad del modelo se utiliza **Grad-CAM**, una técni
 
 # Arquitectura del Proyecto
 
-El sistema fue refactorizado para separar responsabilidades en módulos independientes.
+El proyecto está organizado en módulos independientes para separar la carga del modelo, el preprocesamiento de imágenes, la inferencia, la generación de Grad-CAM y la aplicación principal.
 
+```text
 UAO-Neumonia/
-│
 ├── data/
-│ └── raw/
-│
+│   └── raw/
 ├── models/
-│ └── conv_MLP_84.h5
-│
+│   └── conv_MLP_84.h5
 ├── src/
-│ ├── read_img.py
-│ ├── preprocess_img.py
-│ ├── load_model.py
-│ ├── grad_cam.py
-│ └── integrator.py
-│
+│   ├── app.py
+│   ├── check_model.py
+│   ├── detector_neumonia.py
+│   ├── grad_cam.py
+│   ├── integrator.py
+│   ├── load_model.py
+│   ├── preprocess_img.py
+│   └── read_img.py
 ├── tests/
-│
-├── app.py
-├── detector_neumonia.py
-├── check_model.py
 ├── Dockerfile
 ├── Makefile
 ├── pytest.ini
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-
----
+```
 
 # Flujo del Sistema
 
