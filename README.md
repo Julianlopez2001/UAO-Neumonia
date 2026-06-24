@@ -1,4 +1,4 @@
-# UAO-Neumonia
+# Pneumonia-Detection-AI
 
 Herramienta para el apoyo al diagnóstico médico de neumonía a partir de radiografías de tórax utilizando Deep Learning y Grad-CAM.
 
